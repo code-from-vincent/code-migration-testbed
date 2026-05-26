@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="KpiResultEJBDAO.InsertKpiResult"><statement><![CDATA[INSERT INTO TB_KPIRESULT (KPIRESULT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KpiResultEJBDAO.SelectKpiResultList"><statement><![CDATA[SELECT KPIRESULT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_KPIRESULT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KpiResultEJBDAO.SelectKpiResultDetail"><statement><![CDATA[SELECT KPIRESULT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_KPIRESULT WHERE KPIRESULT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="KpiResultEJBDAO.UpdateKpiResult"><statement><![CDATA[UPDATE TB_KPIRESULT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE KPIRESULT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KpiResultEJBDAO.DeleteKpiResult"><statement><![CDATA[DELETE FROM TB_KPIRESULT WHERE KPIRESULT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

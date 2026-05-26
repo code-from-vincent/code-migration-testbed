@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="TemplateDocumentEJBDAO.InsertTemplateDocument"><statement><![CDATA[INSERT INTO TB_TEMPLATEDOCUMENT (TEMPLATEDOCUMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TemplateDocumentEJBDAO.SelectTemplateDocumentList"><statement><![CDATA[SELECT TEMPLATEDOCUMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_TEMPLATEDOCUMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TemplateDocumentEJBDAO.SelectTemplateDocumentDetail"><statement><![CDATA[SELECT TEMPLATEDOCUMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_TEMPLATEDOCUMENT WHERE TEMPLATEDOCUMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="TemplateDocumentEJBDAO.UpdateTemplateDocument"><statement><![CDATA[UPDATE TB_TEMPLATEDOCUMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE TEMPLATEDOCUMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TemplateDocumentEJBDAO.DeleteTemplateDocument"><statement><![CDATA[DELETE FROM TB_TEMPLATEDOCUMENT WHERE TEMPLATEDOCUMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CmdbRelationshipEJBDAO.InsertCmdbRelationship"><statement><![CDATA[INSERT INTO TB_CMDBRELATIONSHIP (CMDBRELATIONSHIP_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CmdbRelationshipEJBDAO.SelectCmdbRelationshipList"><statement><![CDATA[SELECT CMDBRELATIONSHIP_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CMDBRELATIONSHIP WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CmdbRelationshipEJBDAO.SelectCmdbRelationshipDetail"><statement><![CDATA[SELECT CMDBRELATIONSHIP_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CMDBRELATIONSHIP WHERE CMDBRELATIONSHIP_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CmdbRelationshipEJBDAO.UpdateCmdbRelationship"><statement><![CDATA[UPDATE TB_CMDBRELATIONSHIP SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CMDBRELATIONSHIP_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CmdbRelationshipEJBDAO.DeleteCmdbRelationship"><statement><![CDATA[DELETE FROM TB_CMDBRELATIONSHIP WHERE CMDBRELATIONSHIP_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="InsurancePolicyEJBDAO.InsertInsurancePolicy"><statement><![CDATA[INSERT INTO TB_INSURANCEPOLICY (INSURANCEPOLICY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InsurancePolicyEJBDAO.SelectInsurancePolicyList"><statement><![CDATA[SELECT INSURANCEPOLICY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INSURANCEPOLICY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InsurancePolicyEJBDAO.SelectInsurancePolicyDetail"><statement><![CDATA[SELECT INSURANCEPOLICY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INSURANCEPOLICY WHERE INSURANCEPOLICY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="InsurancePolicyEJBDAO.UpdateInsurancePolicy"><statement><![CDATA[UPDATE TB_INSURANCEPOLICY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INSURANCEPOLICY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InsurancePolicyEJBDAO.DeleteInsurancePolicy"><statement><![CDATA[DELETE FROM TB_INSURANCEPOLICY WHERE INSURANCEPOLICY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

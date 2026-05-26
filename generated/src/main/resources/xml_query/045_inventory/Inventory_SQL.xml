@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="InventoryEJBDAO.InsertInventory"><statement><![CDATA[INSERT INTO TB_INVENTORY (INVENTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InventoryEJBDAO.SelectInventoryList"><statement><![CDATA[SELECT INVENTORY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INVENTORY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InventoryEJBDAO.SelectInventoryDetail"><statement><![CDATA[SELECT INVENTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INVENTORY WHERE INVENTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="InventoryEJBDAO.UpdateInventory"><statement><![CDATA[UPDATE TB_INVENTORY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INVENTORY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InventoryEJBDAO.DeleteInventory"><statement><![CDATA[DELETE FROM TB_INVENTORY WHERE INVENTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

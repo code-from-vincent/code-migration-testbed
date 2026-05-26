@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="AccountPayableEJBDAO.InsertAccountPayable"><statement><![CDATA[INSERT INTO TB_ACCOUNTPAYABLE (ACCOUNTPAYABLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountPayableEJBDAO.SelectAccountPayableList"><statement><![CDATA[SELECT ACCOUNTPAYABLE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_ACCOUNTPAYABLE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountPayableEJBDAO.SelectAccountPayableDetail"><statement><![CDATA[SELECT ACCOUNTPAYABLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_ACCOUNTPAYABLE WHERE ACCOUNTPAYABLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="AccountPayableEJBDAO.UpdateAccountPayable"><statement><![CDATA[UPDATE TB_ACCOUNTPAYABLE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE ACCOUNTPAYABLE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountPayableEJBDAO.DeleteAccountPayable"><statement><![CDATA[DELETE FROM TB_ACCOUNTPAYABLE WHERE ACCOUNTPAYABLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

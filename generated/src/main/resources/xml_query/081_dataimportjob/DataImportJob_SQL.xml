@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="DataImportJobEJBDAO.InsertDataImportJob"><statement><![CDATA[INSERT INTO TB_DATAIMPORTJOB (DATAIMPORTJOB_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DataImportJobEJBDAO.SelectDataImportJobList"><statement><![CDATA[SELECT DATAIMPORTJOB_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_DATAIMPORTJOB WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DataImportJobEJBDAO.SelectDataImportJobDetail"><statement><![CDATA[SELECT DATAIMPORTJOB_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_DATAIMPORTJOB WHERE DATAIMPORTJOB_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="DataImportJobEJBDAO.UpdateDataImportJob"><statement><![CDATA[UPDATE TB_DATAIMPORTJOB SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE DATAIMPORTJOB_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DataImportJobEJBDAO.DeleteDataImportJob"><statement><![CDATA[DELETE FROM TB_DATAIMPORTJOB WHERE DATAIMPORTJOB_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

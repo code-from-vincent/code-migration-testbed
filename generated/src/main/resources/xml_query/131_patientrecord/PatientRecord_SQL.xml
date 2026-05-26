@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="PatientRecordEJBDAO.InsertPatientRecord"><statement><![CDATA[INSERT INTO TB_PATIENTRECORD (PATIENTRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PatientRecordEJBDAO.SelectPatientRecordList"><statement><![CDATA[SELECT PATIENTRECORD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PATIENTRECORD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PatientRecordEJBDAO.SelectPatientRecordDetail"><statement><![CDATA[SELECT PATIENTRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PATIENTRECORD WHERE PATIENTRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="PatientRecordEJBDAO.UpdatePatientRecord"><statement><![CDATA[UPDATE TB_PATIENTRECORD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PATIENTRECORD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PatientRecordEJBDAO.DeletePatientRecord"><statement><![CDATA[DELETE FROM TB_PATIENTRECORD WHERE PATIENTRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

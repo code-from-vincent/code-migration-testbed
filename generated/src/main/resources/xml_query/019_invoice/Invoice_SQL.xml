@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="InvoiceEJBDAO.InsertInvoice"><statement><![CDATA[INSERT INTO TB_INVOICE (INVOICE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InvoiceEJBDAO.SelectInvoiceList"><statement><![CDATA[SELECT INVOICE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INVOICE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InvoiceEJBDAO.SelectInvoiceDetail"><statement><![CDATA[SELECT INVOICE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INVOICE WHERE INVOICE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="InvoiceEJBDAO.UpdateInvoice"><statement><![CDATA[UPDATE TB_INVOICE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INVOICE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InvoiceEJBDAO.DeleteInvoice"><statement><![CDATA[DELETE FROM TB_INVOICE WHERE INVOICE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

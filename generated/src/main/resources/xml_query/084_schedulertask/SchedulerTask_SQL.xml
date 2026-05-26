@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="SchedulerTaskEJBDAO.InsertSchedulerTask"><statement><![CDATA[INSERT INTO TB_SCHEDULERTASK (SCHEDULERTASK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SchedulerTaskEJBDAO.SelectSchedulerTaskList"><statement><![CDATA[SELECT SCHEDULERTASK_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SCHEDULERTASK WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SchedulerTaskEJBDAO.SelectSchedulerTaskDetail"><statement><![CDATA[SELECT SCHEDULERTASK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SCHEDULERTASK WHERE SCHEDULERTASK_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="SchedulerTaskEJBDAO.UpdateSchedulerTask"><statement><![CDATA[UPDATE TB_SCHEDULERTASK SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SCHEDULERTASK_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SchedulerTaskEJBDAO.DeleteSchedulerTask"><statement><![CDATA[DELETE FROM TB_SCHEDULERTASK WHERE SCHEDULERTASK_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

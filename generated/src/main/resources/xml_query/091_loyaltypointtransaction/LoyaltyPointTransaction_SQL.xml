@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="LoyaltyPointTransactionEJBDAO.InsertLoyaltyPointTransaction"><statement><![CDATA[INSERT INTO TB_LOYALTYPOINTTRANSACTION (LOYALTYPOINTTRANSACTION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoyaltyPointTransactionEJBDAO.SelectLoyaltyPointTransactionList"><statement><![CDATA[SELECT LOYALTYPOINTTRANSACTION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_LOYALTYPOINTTRANSACTION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoyaltyPointTransactionEJBDAO.SelectLoyaltyPointTransactionDetail"><statement><![CDATA[SELECT LOYALTYPOINTTRANSACTION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_LOYALTYPOINTTRANSACTION WHERE LOYALTYPOINTTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="LoyaltyPointTransactionEJBDAO.UpdateLoyaltyPointTransaction"><statement><![CDATA[UPDATE TB_LOYALTYPOINTTRANSACTION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE LOYALTYPOINTTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoyaltyPointTransactionEJBDAO.DeleteLoyaltyPointTransaction"><statement><![CDATA[DELETE FROM TB_LOYALTYPOINTTRANSACTION WHERE LOYALTYPOINTTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

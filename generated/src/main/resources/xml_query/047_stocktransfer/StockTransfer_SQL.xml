@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="StockTransferEJBDAO.InsertStockTransfer"><statement><![CDATA[INSERT INTO TB_STOCKTRANSFER (STOCKTRANSFER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockTransferEJBDAO.SelectStockTransferList"><statement><![CDATA[SELECT STOCKTRANSFER_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_STOCKTRANSFER WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockTransferEJBDAO.SelectStockTransferDetail"><statement><![CDATA[SELECT STOCKTRANSFER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_STOCKTRANSFER WHERE STOCKTRANSFER_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="StockTransferEJBDAO.UpdateStockTransfer"><statement><![CDATA[UPDATE TB_STOCKTRANSFER SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE STOCKTRANSFER_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockTransferEJBDAO.DeleteStockTransfer"><statement><![CDATA[DELETE FROM TB_STOCKTRANSFER WHERE STOCKTRANSFER_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

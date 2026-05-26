@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="UserRoleEJBDAO.InsertUserRole"><statement><![CDATA[INSERT INTO TB_USERROLE (USERROLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="UserRoleEJBDAO.SelectUserRoleList"><statement><![CDATA[SELECT USERROLE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_USERROLE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="UserRoleEJBDAO.SelectUserRoleDetail"><statement><![CDATA[SELECT USERROLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_USERROLE WHERE USERROLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="UserRoleEJBDAO.UpdateUserRole"><statement><![CDATA[UPDATE TB_USERROLE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE USERROLE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="UserRoleEJBDAO.DeleteUserRole"><statement><![CDATA[DELETE FROM TB_USERROLE WHERE USERROLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

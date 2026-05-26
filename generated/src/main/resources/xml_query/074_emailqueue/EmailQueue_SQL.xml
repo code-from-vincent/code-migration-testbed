@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="EmailQueueEJBDAO.InsertEmailQueue"><statement><![CDATA[INSERT INTO TB_EMAILQUEUE (EMAILQUEUE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="EmailQueueEJBDAO.SelectEmailQueueList"><statement><![CDATA[SELECT EMAILQUEUE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_EMAILQUEUE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="EmailQueueEJBDAO.SelectEmailQueueDetail"><statement><![CDATA[SELECT EMAILQUEUE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_EMAILQUEUE WHERE EMAILQUEUE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="EmailQueueEJBDAO.UpdateEmailQueue"><statement><![CDATA[UPDATE TB_EMAILQUEUE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE EMAILQUEUE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="EmailQueueEJBDAO.DeleteEmailQueue"><statement><![CDATA[DELETE FROM TB_EMAILQUEUE WHERE EMAILQUEUE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

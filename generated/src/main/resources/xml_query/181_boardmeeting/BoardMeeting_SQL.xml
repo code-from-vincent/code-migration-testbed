@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="BoardMeetingEJBDAO.InsertBoardMeeting"><statement><![CDATA[INSERT INTO TB_BOARDMEETING (BOARDMEETING_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BoardMeetingEJBDAO.SelectBoardMeetingList"><statement><![CDATA[SELECT BOARDMEETING_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_BOARDMEETING WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BoardMeetingEJBDAO.SelectBoardMeetingDetail"><statement><![CDATA[SELECT BOARDMEETING_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_BOARDMEETING WHERE BOARDMEETING_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="BoardMeetingEJBDAO.UpdateBoardMeeting"><statement><![CDATA[UPDATE TB_BOARDMEETING SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE BOARDMEETING_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BoardMeetingEJBDAO.DeleteBoardMeeting"><statement><![CDATA[DELETE FROM TB_BOARDMEETING WHERE BOARDMEETING_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

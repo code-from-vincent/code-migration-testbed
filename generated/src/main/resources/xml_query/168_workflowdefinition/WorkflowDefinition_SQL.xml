@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="WorkflowDefinitionEJBDAO.InsertWorkflowDefinition"><statement><![CDATA[INSERT INTO TB_WORKFLOWDEFINITION (WORKFLOWDEFINITION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowDefinitionEJBDAO.SelectWorkflowDefinitionList"><statement><![CDATA[SELECT WORKFLOWDEFINITION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_WORKFLOWDEFINITION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowDefinitionEJBDAO.SelectWorkflowDefinitionDetail"><statement><![CDATA[SELECT WORKFLOWDEFINITION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_WORKFLOWDEFINITION WHERE WORKFLOWDEFINITION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="WorkflowDefinitionEJBDAO.UpdateWorkflowDefinition"><statement><![CDATA[UPDATE TB_WORKFLOWDEFINITION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE WORKFLOWDEFINITION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowDefinitionEJBDAO.DeleteWorkflowDefinition"><statement><![CDATA[DELETE FROM TB_WORKFLOWDEFINITION WHERE WORKFLOWDEFINITION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

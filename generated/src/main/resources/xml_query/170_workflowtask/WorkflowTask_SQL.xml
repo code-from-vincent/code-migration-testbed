@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="WorkflowTaskEJBDAO.InsertWorkflowTask"><statement><![CDATA[INSERT INTO TB_WORKFLOWTASK (WORKFLOWTASK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowTaskEJBDAO.SelectWorkflowTaskList"><statement><![CDATA[SELECT WORKFLOWTASK_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_WORKFLOWTASK WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowTaskEJBDAO.SelectWorkflowTaskDetail"><statement><![CDATA[SELECT WORKFLOWTASK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_WORKFLOWTASK WHERE WORKFLOWTASK_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="WorkflowTaskEJBDAO.UpdateWorkflowTask"><statement><![CDATA[UPDATE TB_WORKFLOWTASK SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE WORKFLOWTASK_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowTaskEJBDAO.DeleteWorkflowTask"><statement><![CDATA[DELETE FROM TB_WORKFLOWTASK WHERE WORKFLOWTASK_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

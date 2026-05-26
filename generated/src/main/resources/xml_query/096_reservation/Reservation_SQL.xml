@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ReservationEJBDAO.InsertReservation"><statement><![CDATA[INSERT INTO TB_RESERVATION (RESERVATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ReservationEJBDAO.SelectReservationList"><statement><![CDATA[SELECT RESERVATION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_RESERVATION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ReservationEJBDAO.SelectReservationDetail"><statement><![CDATA[SELECT RESERVATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_RESERVATION WHERE RESERVATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ReservationEJBDAO.UpdateReservation"><statement><![CDATA[UPDATE TB_RESERVATION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE RESERVATION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ReservationEJBDAO.DeleteReservation"><statement><![CDATA[DELETE FROM TB_RESERVATION WHERE RESERVATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

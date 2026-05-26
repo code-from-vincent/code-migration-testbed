@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="PurchaseOrderEJBDAO.InsertPurchaseOrder"><statement><![CDATA[INSERT INTO TB_PURCHASEORDER (PURCHASEORDER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PurchaseOrderEJBDAO.SelectPurchaseOrderList"><statement><![CDATA[SELECT PURCHASEORDER_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PURCHASEORDER WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PurchaseOrderEJBDAO.SelectPurchaseOrderDetail"><statement><![CDATA[SELECT PURCHASEORDER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PURCHASEORDER WHERE PURCHASEORDER_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="PurchaseOrderEJBDAO.UpdatePurchaseOrder"><statement><![CDATA[UPDATE TB_PURCHASEORDER SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PURCHASEORDER_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PurchaseOrderEJBDAO.DeletePurchaseOrder"><statement><![CDATA[DELETE FROM TB_PURCHASEORDER WHERE PURCHASEORDER_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

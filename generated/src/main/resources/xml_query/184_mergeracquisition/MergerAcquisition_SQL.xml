@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="MergerAcquisitionEJBDAO.InsertMergerAcquisition"><statement><![CDATA[INSERT INTO TB_MERGERACQUISITION (MERGERACQUISITION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MergerAcquisitionEJBDAO.SelectMergerAcquisitionList"><statement><![CDATA[SELECT MERGERACQUISITION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_MERGERACQUISITION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MergerAcquisitionEJBDAO.SelectMergerAcquisitionDetail"><statement><![CDATA[SELECT MERGERACQUISITION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_MERGERACQUISITION WHERE MERGERACQUISITION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="MergerAcquisitionEJBDAO.UpdateMergerAcquisition"><statement><![CDATA[UPDATE TB_MERGERACQUISITION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE MERGERACQUISITION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MergerAcquisitionEJBDAO.DeleteMergerAcquisition"><statement><![CDATA[DELETE FROM TB_MERGERACQUISITION WHERE MERGERACQUISITION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

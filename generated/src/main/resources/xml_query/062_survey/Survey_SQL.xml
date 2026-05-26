@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="SurveyEJBDAO.InsertSurvey"><statement><![CDATA[INSERT INTO TB_SURVEY (SURVEY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyEJBDAO.SelectSurveyList"><statement><![CDATA[SELECT SURVEY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SURVEY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyEJBDAO.SelectSurveyDetail"><statement><![CDATA[SELECT SURVEY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SURVEY WHERE SURVEY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="SurveyEJBDAO.UpdateSurvey"><statement><![CDATA[UPDATE TB_SURVEY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SURVEY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyEJBDAO.DeleteSurvey"><statement><![CDATA[DELETE FROM TB_SURVEY WHERE SURVEY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

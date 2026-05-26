@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ArchiveRecordEJBDAO.InsertArchiveRecord"><statement><![CDATA[INSERT INTO TB_ARCHIVERECORD (ARCHIVERECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ArchiveRecordEJBDAO.SelectArchiveRecordList"><statement><![CDATA[SELECT ARCHIVERECORD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_ARCHIVERECORD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ArchiveRecordEJBDAO.SelectArchiveRecordDetail"><statement><![CDATA[SELECT ARCHIVERECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_ARCHIVERECORD WHERE ARCHIVERECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ArchiveRecordEJBDAO.UpdateArchiveRecord"><statement><![CDATA[UPDATE TB_ARCHIVERECORD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE ARCHIVERECORD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ArchiveRecordEJBDAO.DeleteArchiveRecord"><statement><![CDATA[DELETE FROM TB_ARCHIVERECORD WHERE ARCHIVERECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

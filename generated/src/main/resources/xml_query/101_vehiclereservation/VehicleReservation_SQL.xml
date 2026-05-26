@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="VehicleReservationEJBDAO.InsertVehicleReservation"><statement><![CDATA[INSERT INTO TB_VEHICLERESERVATION (VEHICLERESERVATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="VehicleReservationEJBDAO.SelectVehicleReservationList"><statement><![CDATA[SELECT VEHICLERESERVATION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_VEHICLERESERVATION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="VehicleReservationEJBDAO.SelectVehicleReservationDetail"><statement><![CDATA[SELECT VEHICLERESERVATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_VEHICLERESERVATION WHERE VEHICLERESERVATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="VehicleReservationEJBDAO.UpdateVehicleReservation"><statement><![CDATA[UPDATE TB_VEHICLERESERVATION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE VEHICLERESERVATION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="VehicleReservationEJBDAO.DeleteVehicleReservation"><statement><![CDATA[DELETE FROM TB_VEHICLERESERVATION WHERE VEHICLERESERVATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

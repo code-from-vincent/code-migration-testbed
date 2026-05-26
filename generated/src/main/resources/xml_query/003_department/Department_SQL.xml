@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="DepartmentEJBDAO.InsertDepartment"><statement><![CDATA[INSERT INTO TB_DEPARTMENT (DEPARTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DepartmentEJBDAO.SelectDepartmentList"><statement><![CDATA[SELECT DEPARTMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_DEPARTMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DepartmentEJBDAO.SelectDepartmentDetail"><statement><![CDATA[SELECT DEPARTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_DEPARTMENT WHERE DEPARTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="DepartmentEJBDAO.UpdateDepartment"><statement><![CDATA[UPDATE TB_DEPARTMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE DEPARTMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DepartmentEJBDAO.DeleteDepartment"><statement><![CDATA[DELETE FROM TB_DEPARTMENT WHERE DEPARTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

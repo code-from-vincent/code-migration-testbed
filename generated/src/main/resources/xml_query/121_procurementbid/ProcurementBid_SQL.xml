@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ProcurementBidEJBDAO.InsertProcurementBid"><statement><![CDATA[INSERT INTO TB_PROCUREMENTBID (PROCUREMENTBID_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProcurementBidEJBDAO.SelectProcurementBidList"><statement><![CDATA[SELECT PROCUREMENTBID_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PROCUREMENTBID WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProcurementBidEJBDAO.SelectProcurementBidDetail"><statement><![CDATA[SELECT PROCUREMENTBID_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PROCUREMENTBID WHERE PROCUREMENTBID_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ProcurementBidEJBDAO.UpdateProcurementBid"><statement><![CDATA[UPDATE TB_PROCUREMENTBID SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PROCUREMENTBID_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProcurementBidEJBDAO.DeleteProcurementBid"><statement><![CDATA[DELETE FROM TB_PROCUREMENTBID WHERE PROCUREMENTBID_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

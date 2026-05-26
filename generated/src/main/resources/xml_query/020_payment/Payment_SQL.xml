@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="PaymentEJBDAO.InsertPayment"><statement><![CDATA[INSERT INTO TB_PAYMENT (PAYMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PaymentEJBDAO.SelectPaymentList"><statement><![CDATA[SELECT PAYMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PAYMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PaymentEJBDAO.SelectPaymentDetail"><statement><![CDATA[SELECT PAYMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PAYMENT WHERE PAYMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="PaymentEJBDAO.UpdatePayment"><statement><![CDATA[UPDATE TB_PAYMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PAYMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PaymentEJBDAO.DeletePayment"><statement><![CDATA[DELETE FROM TB_PAYMENT WHERE PAYMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="JournalEntryEJBDAO.InsertJournalEntry"><statement><![CDATA[INSERT INTO TB_JOURNALENTRY (JOURNALENTRY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="JournalEntryEJBDAO.SelectJournalEntryList"><statement><![CDATA[SELECT JOURNALENTRY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_JOURNALENTRY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="JournalEntryEJBDAO.SelectJournalEntryDetail"><statement><![CDATA[SELECT JOURNALENTRY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_JOURNALENTRY WHERE JOURNALENTRY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="JournalEntryEJBDAO.UpdateJournalEntry"><statement><![CDATA[UPDATE TB_JOURNALENTRY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE JOURNALENTRY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="JournalEntryEJBDAO.DeleteJournalEntry"><statement><![CDATA[DELETE FROM TB_JOURNALENTRY WHERE JOURNALENTRY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

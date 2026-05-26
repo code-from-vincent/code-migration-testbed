@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ScenarioPlanEJBDAO.InsertScenarioPlan"><statement><![CDATA[INSERT INTO TB_SCENARIOPLAN (SCENARIOPLAN_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ScenarioPlanEJBDAO.SelectScenarioPlanList"><statement><![CDATA[SELECT SCENARIOPLAN_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SCENARIOPLAN WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ScenarioPlanEJBDAO.SelectScenarioPlanDetail"><statement><![CDATA[SELECT SCENARIOPLAN_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SCENARIOPLAN WHERE SCENARIOPLAN_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ScenarioPlanEJBDAO.UpdateScenarioPlan"><statement><![CDATA[UPDATE TB_SCENARIOPLAN SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SCENARIOPLAN_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ScenarioPlanEJBDAO.DeleteScenarioPlan"><statement><![CDATA[DELETE FROM TB_SCENARIOPLAN WHERE SCENARIOPLAN_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

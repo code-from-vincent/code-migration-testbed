@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ComplianceCheckEJBDAO.InsertComplianceCheck"><statement><![CDATA[INSERT INTO TB_COMPLIANCECHECK (COMPLIANCECHECK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ComplianceCheckEJBDAO.SelectComplianceCheckList"><statement><![CDATA[SELECT COMPLIANCECHECK_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_COMPLIANCECHECK WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ComplianceCheckEJBDAO.SelectComplianceCheckDetail"><statement><![CDATA[SELECT COMPLIANCECHECK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_COMPLIANCECHECK WHERE COMPLIANCECHECK_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ComplianceCheckEJBDAO.UpdateComplianceCheck"><statement><![CDATA[UPDATE TB_COMPLIANCECHECK SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE COMPLIANCECHECK_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ComplianceCheckEJBDAO.DeleteComplianceCheck"><statement><![CDATA[DELETE FROM TB_COMPLIANCECHECK WHERE COMPLIANCECHECK_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

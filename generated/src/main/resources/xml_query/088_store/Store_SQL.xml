@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="StoreEJBDAO.InsertStore"><statement><![CDATA[INSERT INTO TB_STORE (STORE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StoreEJBDAO.SelectStoreList"><statement><![CDATA[SELECT STORE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_STORE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StoreEJBDAO.SelectStoreDetail"><statement><![CDATA[SELECT STORE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_STORE WHERE STORE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="StoreEJBDAO.UpdateStore"><statement><![CDATA[UPDATE TB_STORE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE STORE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StoreEJBDAO.DeleteStore"><statement><![CDATA[DELETE FROM TB_STORE WHERE STORE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

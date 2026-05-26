@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ChatSessionEJBDAO.InsertChatSession"><statement><![CDATA[INSERT INTO TB_CHATSESSION (CHATSESSION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ChatSessionEJBDAO.SelectChatSessionList"><statement><![CDATA[SELECT CHATSESSION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CHATSESSION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ChatSessionEJBDAO.SelectChatSessionDetail"><statement><![CDATA[SELECT CHATSESSION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CHATSESSION WHERE CHATSESSION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ChatSessionEJBDAO.UpdateChatSession"><statement><![CDATA[UPDATE TB_CHATSESSION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CHATSESSION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ChatSessionEJBDAO.DeleteChatSession"><statement><![CDATA[DELETE FROM TB_CHATSESSION WHERE CHATSESSION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="InnovationIdeaEJBDAO.InsertInnovationIdea"><statement><![CDATA[INSERT INTO TB_INNOVATIONIDEA (INNOVATIONIDEA_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InnovationIdeaEJBDAO.SelectInnovationIdeaList"><statement><![CDATA[SELECT INNOVATIONIDEA_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INNOVATIONIDEA WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InnovationIdeaEJBDAO.SelectInnovationIdeaDetail"><statement><![CDATA[SELECT INNOVATIONIDEA_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INNOVATIONIDEA WHERE INNOVATIONIDEA_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="InnovationIdeaEJBDAO.UpdateInnovationIdea"><statement><![CDATA[UPDATE TB_INNOVATIONIDEA SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INNOVATIONIDEA_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="InnovationIdeaEJBDAO.DeleteInnovationIdea"><statement><![CDATA[DELETE FROM TB_INNOVATIONIDEA WHERE INNOVATIONIDEA_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

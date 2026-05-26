@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="StockAdjustmentEJBDAO.InsertStockAdjustment"><statement><![CDATA[INSERT INTO TB_STOCKADJUSTMENT (STOCKADJUSTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockAdjustmentEJBDAO.SelectStockAdjustmentList"><statement><![CDATA[SELECT STOCKADJUSTMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_STOCKADJUSTMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockAdjustmentEJBDAO.SelectStockAdjustmentDetail"><statement><![CDATA[SELECT STOCKADJUSTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_STOCKADJUSTMENT WHERE STOCKADJUSTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="StockAdjustmentEJBDAO.UpdateStockAdjustment"><statement><![CDATA[UPDATE TB_STOCKADJUSTMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE STOCKADJUSTMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="StockAdjustmentEJBDAO.DeleteStockAdjustment"><statement><![CDATA[DELETE FROM TB_STOCKADJUSTMENT WHERE STOCKADJUSTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="IntegrationMessageEJBDAO.InsertIntegrationMessage"><statement><![CDATA[INSERT INTO TB_INTEGRATIONMESSAGE (INTEGRATIONMESSAGE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationMessageEJBDAO.SelectIntegrationMessageList"><statement><![CDATA[SELECT INTEGRATIONMESSAGE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INTEGRATIONMESSAGE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationMessageEJBDAO.SelectIntegrationMessageDetail"><statement><![CDATA[SELECT INTEGRATIONMESSAGE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INTEGRATIONMESSAGE WHERE INTEGRATIONMESSAGE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="IntegrationMessageEJBDAO.UpdateIntegrationMessage"><statement><![CDATA[UPDATE TB_INTEGRATIONMESSAGE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INTEGRATIONMESSAGE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationMessageEJBDAO.DeleteIntegrationMessage"><statement><![CDATA[DELETE FROM TB_INTEGRATIONMESSAGE WHERE INTEGRATIONMESSAGE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

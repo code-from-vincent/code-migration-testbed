@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CashTransactionEJBDAO.InsertCashTransaction"><statement><![CDATA[INSERT INTO TB_CASHTRANSACTION (CASHTRANSACTION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CashTransactionEJBDAO.SelectCashTransactionList"><statement><![CDATA[SELECT CASHTRANSACTION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CASHTRANSACTION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CashTransactionEJBDAO.SelectCashTransactionDetail"><statement><![CDATA[SELECT CASHTRANSACTION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CASHTRANSACTION WHERE CASHTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CashTransactionEJBDAO.UpdateCashTransaction"><statement><![CDATA[UPDATE TB_CASHTRANSACTION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CASHTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CashTransactionEJBDAO.DeleteCashTransaction"><statement><![CDATA[DELETE FROM TB_CASHTRANSACTION WHERE CASHTRANSACTION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

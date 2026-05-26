@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="GrantApplicationEJBDAO.InsertGrantApplication"><statement><![CDATA[INSERT INTO TB_GRANTAPPLICATION (GRANTAPPLICATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="GrantApplicationEJBDAO.SelectGrantApplicationList"><statement><![CDATA[SELECT GRANTAPPLICATION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_GRANTAPPLICATION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="GrantApplicationEJBDAO.SelectGrantApplicationDetail"><statement><![CDATA[SELECT GRANTAPPLICATION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_GRANTAPPLICATION WHERE GRANTAPPLICATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="GrantApplicationEJBDAO.UpdateGrantApplication"><statement><![CDATA[UPDATE TB_GRANTAPPLICATION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE GRANTAPPLICATION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="GrantApplicationEJBDAO.DeleteGrantApplication"><statement><![CDATA[DELETE FROM TB_GRANTAPPLICATION WHERE GRANTAPPLICATION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

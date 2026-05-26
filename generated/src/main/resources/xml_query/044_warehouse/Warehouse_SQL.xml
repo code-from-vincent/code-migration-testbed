@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="WarehouseEJBDAO.InsertWarehouse"><statement><![CDATA[INSERT INTO TB_WAREHOUSE (WAREHOUSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WarehouseEJBDAO.SelectWarehouseList"><statement><![CDATA[SELECT WAREHOUSE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_WAREHOUSE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WarehouseEJBDAO.SelectWarehouseDetail"><statement><![CDATA[SELECT WAREHOUSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_WAREHOUSE WHERE WAREHOUSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="WarehouseEJBDAO.UpdateWarehouse"><statement><![CDATA[UPDATE TB_WAREHOUSE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE WAREHOUSE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WarehouseEJBDAO.DeleteWarehouse"><statement><![CDATA[DELETE FROM TB_WAREHOUSE WHERE WAREHOUSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

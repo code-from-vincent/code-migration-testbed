@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="AccountReceivableEJBDAO.InsertAccountReceivable"><statement><![CDATA[INSERT INTO TB_ACCOUNTRECEIVABLE (ACCOUNTRECEIVABLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountReceivableEJBDAO.SelectAccountReceivableList"><statement><![CDATA[SELECT ACCOUNTRECEIVABLE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_ACCOUNTRECEIVABLE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountReceivableEJBDAO.SelectAccountReceivableDetail"><statement><![CDATA[SELECT ACCOUNTRECEIVABLE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_ACCOUNTRECEIVABLE WHERE ACCOUNTRECEIVABLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="AccountReceivableEJBDAO.UpdateAccountReceivable"><statement><![CDATA[UPDATE TB_ACCOUNTRECEIVABLE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE ACCOUNTRECEIVABLE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AccountReceivableEJBDAO.DeleteAccountReceivable"><statement><![CDATA[DELETE FROM TB_ACCOUNTRECEIVABLE WHERE ACCOUNTRECEIVABLE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

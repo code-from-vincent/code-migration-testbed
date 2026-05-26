@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CodeDetailEJBDAO.InsertCodeDetail"><statement><![CDATA[INSERT INTO TB_CODEDETAIL (CODEDETAIL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CodeDetailEJBDAO.SelectCodeDetailList"><statement><![CDATA[SELECT CODEDETAIL_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CODEDETAIL WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CodeDetailEJBDAO.SelectCodeDetailDetail"><statement><![CDATA[SELECT CODEDETAIL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CODEDETAIL WHERE CODEDETAIL_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CodeDetailEJBDAO.UpdateCodeDetail"><statement><![CDATA[UPDATE TB_CODEDETAIL SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CODEDETAIL_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CodeDetailEJBDAO.DeleteCodeDetail"><statement><![CDATA[DELETE FROM TB_CODEDETAIL WHERE CODEDETAIL_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

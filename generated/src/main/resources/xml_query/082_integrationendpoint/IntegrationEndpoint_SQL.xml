@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="IntegrationEndpointEJBDAO.InsertIntegrationEndpoint"><statement><![CDATA[INSERT INTO TB_INTEGRATIONENDPOINT (INTEGRATIONENDPOINT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationEndpointEJBDAO.SelectIntegrationEndpointList"><statement><![CDATA[SELECT INTEGRATIONENDPOINT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_INTEGRATIONENDPOINT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationEndpointEJBDAO.SelectIntegrationEndpointDetail"><statement><![CDATA[SELECT INTEGRATIONENDPOINT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_INTEGRATIONENDPOINT WHERE INTEGRATIONENDPOINT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="IntegrationEndpointEJBDAO.UpdateIntegrationEndpoint"><statement><![CDATA[UPDATE TB_INTEGRATIONENDPOINT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE INTEGRATIONENDPOINT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="IntegrationEndpointEJBDAO.DeleteIntegrationEndpoint"><statement><![CDATA[DELETE FROM TB_INTEGRATIONENDPOINT WHERE INTEGRATIONENDPOINT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

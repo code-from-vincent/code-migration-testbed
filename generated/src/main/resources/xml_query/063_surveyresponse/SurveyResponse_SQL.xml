@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="SurveyResponseEJBDAO.InsertSurveyResponse"><statement><![CDATA[INSERT INTO TB_SURVEYRESPONSE (SURVEYRESPONSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyResponseEJBDAO.SelectSurveyResponseList"><statement><![CDATA[SELECT SURVEYRESPONSE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SURVEYRESPONSE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyResponseEJBDAO.SelectSurveyResponseDetail"><statement><![CDATA[SELECT SURVEYRESPONSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SURVEYRESPONSE WHERE SURVEYRESPONSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="SurveyResponseEJBDAO.UpdateSurveyResponse"><statement><![CDATA[UPDATE TB_SURVEYRESPONSE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SURVEYRESPONSE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SurveyResponseEJBDAO.DeleteSurveyResponse"><statement><![CDATA[DELETE FROM TB_SURVEYRESPONSE WHERE SURVEYRESPONSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

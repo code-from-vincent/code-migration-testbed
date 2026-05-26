@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ConsentRecordEJBDAO.InsertConsentRecord"><statement><![CDATA[INSERT INTO TB_CONSENTRECORD (CONSENTRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ConsentRecordEJBDAO.SelectConsentRecordList"><statement><![CDATA[SELECT CONSENTRECORD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CONSENTRECORD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ConsentRecordEJBDAO.SelectConsentRecordDetail"><statement><![CDATA[SELECT CONSENTRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CONSENTRECORD WHERE CONSENTRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ConsentRecordEJBDAO.UpdateConsentRecord"><statement><![CDATA[UPDATE TB_CONSENTRECORD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CONSENTRECORD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ConsentRecordEJBDAO.DeleteConsentRecord"><statement><![CDATA[DELETE FROM TB_CONSENTRECORD WHERE CONSENTRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

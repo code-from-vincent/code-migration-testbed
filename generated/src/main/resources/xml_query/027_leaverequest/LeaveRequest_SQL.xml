@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="LeaveRequestEJBDAO.InsertLeaveRequest"><statement><![CDATA[INSERT INTO TB_LEAVEREQUEST (LEAVEREQUEST_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LeaveRequestEJBDAO.SelectLeaveRequestList"><statement><![CDATA[SELECT LEAVEREQUEST_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_LEAVEREQUEST WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LeaveRequestEJBDAO.SelectLeaveRequestDetail"><statement><![CDATA[SELECT LEAVEREQUEST_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_LEAVEREQUEST WHERE LEAVEREQUEST_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="LeaveRequestEJBDAO.UpdateLeaveRequest"><statement><![CDATA[UPDATE TB_LEAVEREQUEST SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE LEAVEREQUEST_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LeaveRequestEJBDAO.DeleteLeaveRequest"><statement><![CDATA[DELETE FROM TB_LEAVEREQUEST WHERE LEAVEREQUEST_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>
