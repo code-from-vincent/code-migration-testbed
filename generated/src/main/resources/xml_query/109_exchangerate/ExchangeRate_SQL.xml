@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ExchangeRateEJBDAO.InsertExchangeRate"><statement><![CDATA[INSERT INTO TB_EXCHANGERATE (EXCHANGERATE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ExchangeRateEJBDAO.SelectExchangeRateList"><statement><![CDATA[SELECT EXCHANGERATE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_EXCHANGERATE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ExchangeRateEJBDAO.SelectExchangeRateDetail"><statement><![CDATA[SELECT EXCHANGERATE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_EXCHANGERATE WHERE EXCHANGERATE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ExchangeRateEJBDAO.UpdateExchangeRate"><statement><![CDATA[UPDATE TB_EXCHANGERATE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE EXCHANGERATE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ExchangeRateEJBDAO.DeleteExchangeRate"><statement><![CDATA[DELETE FROM TB_EXCHANGERATE WHERE EXCHANGERATE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

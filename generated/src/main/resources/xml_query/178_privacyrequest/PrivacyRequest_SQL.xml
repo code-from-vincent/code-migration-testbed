@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="PrivacyRequestEJBDAO.InsertPrivacyRequest"><statement><![CDATA[INSERT INTO TB_PRIVACYREQUEST (PRIVACYREQUEST_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PrivacyRequestEJBDAO.SelectPrivacyRequestList"><statement><![CDATA[SELECT PRIVACYREQUEST_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PRIVACYREQUEST WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PrivacyRequestEJBDAO.SelectPrivacyRequestDetail"><statement><![CDATA[SELECT PRIVACYREQUEST_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PRIVACYREQUEST WHERE PRIVACYREQUEST_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="PrivacyRequestEJBDAO.UpdatePrivacyRequest"><statement><![CDATA[UPDATE TB_PRIVACYREQUEST SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PRIVACYREQUEST_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PrivacyRequestEJBDAO.DeletePrivacyRequest"><statement><![CDATA[DELETE FROM TB_PRIVACYREQUEST WHERE PRIVACYREQUEST_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="MachineDowntimeEJBDAO.InsertMachineDowntime"><statement><![CDATA[INSERT INTO TB_MACHINEDOWNTIME (MACHINEDOWNTIME_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MachineDowntimeEJBDAO.SelectMachineDowntimeList"><statement><![CDATA[SELECT MACHINEDOWNTIME_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_MACHINEDOWNTIME WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MachineDowntimeEJBDAO.SelectMachineDowntimeDetail"><statement><![CDATA[SELECT MACHINEDOWNTIME_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_MACHINEDOWNTIME WHERE MACHINEDOWNTIME_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="MachineDowntimeEJBDAO.UpdateMachineDowntime"><statement><![CDATA[UPDATE TB_MACHINEDOWNTIME SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE MACHINEDOWNTIME_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MachineDowntimeEJBDAO.DeleteMachineDowntime"><statement><![CDATA[DELETE FROM TB_MACHINEDOWNTIME WHERE MACHINEDOWNTIME_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

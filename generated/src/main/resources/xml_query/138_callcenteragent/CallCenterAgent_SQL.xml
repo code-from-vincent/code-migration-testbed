@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CallCenterAgentEJBDAO.InsertCallCenterAgent"><statement><![CDATA[INSERT INTO TB_CALLCENTERAGENT (CALLCENTERAGENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CallCenterAgentEJBDAO.SelectCallCenterAgentList"><statement><![CDATA[SELECT CALLCENTERAGENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CALLCENTERAGENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CallCenterAgentEJBDAO.SelectCallCenterAgentDetail"><statement><![CDATA[SELECT CALLCENTERAGENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CALLCENTERAGENT WHERE CALLCENTERAGENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CallCenterAgentEJBDAO.UpdateCallCenterAgent"><statement><![CDATA[UPDATE TB_CALLCENTERAGENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CALLCENTERAGENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CallCenterAgentEJBDAO.DeleteCallCenterAgent"><statement><![CDATA[DELETE FROM TB_CALLCENTERAGENT WHERE CALLCENTERAGENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

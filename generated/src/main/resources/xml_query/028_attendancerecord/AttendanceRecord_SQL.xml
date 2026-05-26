@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="AttendanceRecordEJBDAO.InsertAttendanceRecord"><statement><![CDATA[INSERT INTO TB_ATTENDANCERECORD (ATTENDANCERECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AttendanceRecordEJBDAO.SelectAttendanceRecordList"><statement><![CDATA[SELECT ATTENDANCERECORD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_ATTENDANCERECORD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AttendanceRecordEJBDAO.SelectAttendanceRecordDetail"><statement><![CDATA[SELECT ATTENDANCERECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_ATTENDANCERECORD WHERE ATTENDANCERECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="AttendanceRecordEJBDAO.UpdateAttendanceRecord"><statement><![CDATA[UPDATE TB_ATTENDANCERECORD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE ATTENDANCERECORD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AttendanceRecordEJBDAO.DeleteAttendanceRecord"><statement><![CDATA[DELETE FROM TB_ATTENDANCERECORD WHERE ATTENDANCERECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

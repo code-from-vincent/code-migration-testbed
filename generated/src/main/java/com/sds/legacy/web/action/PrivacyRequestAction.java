@@ -1,0 +1,19 @@
+package com.sds.legacy.web.action;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import gov.mogaha.ntis.cmm.web.DefaultAction;
+
+public class PrivacyRequestAction extends DefaultAction {
+    public ActionForward insertPrivacyRequest(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+    public ActionForward selectPrivacyRequestList(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { HashMap hm=(HashMap)invokeLocal(req); Collection list=(Collection)hm.get("privacyrequestList"); req.setAttribute("privacyrequestList", list==null?new ArrayList():list); return null; }
+    public ActionForward selectPrivacyRequestDetail(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { HashMap hm=(HashMap)invokeLocal(req); req.setAttribute("privacyrequestDetail", hm.get("privacyrequestDetail")); return null; }
+    public ActionForward updatePrivacyRequest(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+    public ActionForward deletePrivacyRequest(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+}

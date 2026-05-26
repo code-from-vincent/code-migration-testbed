@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ProductCategoryEJBDAO.InsertProductCategory"><statement><![CDATA[INSERT INTO TB_PRODUCTCATEGORY (PRODUCTCATEGORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProductCategoryEJBDAO.SelectProductCategoryList"><statement><![CDATA[SELECT PRODUCTCATEGORY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PRODUCTCATEGORY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProductCategoryEJBDAO.SelectProductCategoryDetail"><statement><![CDATA[SELECT PRODUCTCATEGORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PRODUCTCATEGORY WHERE PRODUCTCATEGORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ProductCategoryEJBDAO.UpdateProductCategory"><statement><![CDATA[UPDATE TB_PRODUCTCATEGORY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PRODUCTCATEGORY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProductCategoryEJBDAO.DeleteProductCategory"><statement><![CDATA[DELETE FROM TB_PRODUCTCATEGORY WHERE PRODUCTCATEGORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

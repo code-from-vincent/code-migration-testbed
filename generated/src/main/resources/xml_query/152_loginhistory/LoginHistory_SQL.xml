@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="LoginHistoryEJBDAO.InsertLoginHistory"><statement><![CDATA[INSERT INTO TB_LOGINHISTORY (LOGINHISTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoginHistoryEJBDAO.SelectLoginHistoryList"><statement><![CDATA[SELECT LOGINHISTORY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_LOGINHISTORY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoginHistoryEJBDAO.SelectLoginHistoryDetail"><statement><![CDATA[SELECT LOGINHISTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_LOGINHISTORY WHERE LOGINHISTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="LoginHistoryEJBDAO.UpdateLoginHistory"><statement><![CDATA[UPDATE TB_LOGINHISTORY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE LOGINHISTORY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LoginHistoryEJBDAO.DeleteLoginHistory"><statement><![CDATA[DELETE FROM TB_LOGINHISTORY WHERE LOGINHISTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CarbonEmissionEJBDAO.InsertCarbonEmission"><statement><![CDATA[INSERT INTO TB_CARBONEMISSION (CARBONEMISSION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CarbonEmissionEJBDAO.SelectCarbonEmissionList"><statement><![CDATA[SELECT CARBONEMISSION_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CARBONEMISSION WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CarbonEmissionEJBDAO.SelectCarbonEmissionDetail"><statement><![CDATA[SELECT CARBONEMISSION_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CARBONEMISSION WHERE CARBONEMISSION_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CarbonEmissionEJBDAO.UpdateCarbonEmission"><statement><![CDATA[UPDATE TB_CARBONEMISSION SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CARBONEMISSION_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CarbonEmissionEJBDAO.DeleteCarbonEmission"><statement><![CDATA[DELETE FROM TB_CARBONEMISSION WHERE CARBONEMISSION_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

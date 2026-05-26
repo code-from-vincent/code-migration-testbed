@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CustomerContactEJBDAO.InsertCustomerContact"><statement><![CDATA[INSERT INTO TB_CUSTOMERCONTACT (CUSTOMERCONTACT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CustomerContactEJBDAO.SelectCustomerContactList"><statement><![CDATA[SELECT CUSTOMERCONTACT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CUSTOMERCONTACT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CustomerContactEJBDAO.SelectCustomerContactDetail"><statement><![CDATA[SELECT CUSTOMERCONTACT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CUSTOMERCONTACT WHERE CUSTOMERCONTACT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CustomerContactEJBDAO.UpdateCustomerContact"><statement><![CDATA[UPDATE TB_CUSTOMERCONTACT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CUSTOMERCONTACT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CustomerContactEJBDAO.DeleteCustomerContact"><statement><![CDATA[DELETE FROM TB_CUSTOMERCONTACT WHERE CUSTOMERCONTACT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

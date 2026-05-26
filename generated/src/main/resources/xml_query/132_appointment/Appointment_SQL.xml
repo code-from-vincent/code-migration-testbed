@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="AppointmentEJBDAO.InsertAppointment"><statement><![CDATA[INSERT INTO TB_APPOINTMENT (APPOINTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AppointmentEJBDAO.SelectAppointmentList"><statement><![CDATA[SELECT APPOINTMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_APPOINTMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AppointmentEJBDAO.SelectAppointmentDetail"><statement><![CDATA[SELECT APPOINTMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_APPOINTMENT WHERE APPOINTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="AppointmentEJBDAO.UpdateAppointment"><statement><![CDATA[UPDATE TB_APPOINTMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE APPOINTMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="AppointmentEJBDAO.DeleteAppointment"><statement><![CDATA[DELETE FROM TB_APPOINTMENT WHERE APPOINTMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

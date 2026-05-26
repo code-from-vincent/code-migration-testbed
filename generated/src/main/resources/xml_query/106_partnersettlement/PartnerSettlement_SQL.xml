@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="PartnerSettlementEJBDAO.InsertPartnerSettlement"><statement><![CDATA[INSERT INTO TB_PARTNERSETTLEMENT (PARTNERSETTLEMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PartnerSettlementEJBDAO.SelectPartnerSettlementList"><statement><![CDATA[SELECT PARTNERSETTLEMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PARTNERSETTLEMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PartnerSettlementEJBDAO.SelectPartnerSettlementDetail"><statement><![CDATA[SELECT PARTNERSETTLEMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PARTNERSETTLEMENT WHERE PARTNERSETTLEMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="PartnerSettlementEJBDAO.UpdatePartnerSettlement"><statement><![CDATA[UPDATE TB_PARTNERSETTLEMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PARTNERSETTLEMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="PartnerSettlementEJBDAO.DeletePartnerSettlement"><statement><![CDATA[DELETE FROM TB_PARTNERSETTLEMENT WHERE PARTNERSETTLEMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

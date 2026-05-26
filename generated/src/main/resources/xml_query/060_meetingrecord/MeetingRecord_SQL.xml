@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="MeetingRecordEJBDAO.InsertMeetingRecord"><statement><![CDATA[INSERT INTO TB_MEETINGRECORD (MEETINGRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MeetingRecordEJBDAO.SelectMeetingRecordList"><statement><![CDATA[SELECT MEETINGRECORD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_MEETINGRECORD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MeetingRecordEJBDAO.SelectMeetingRecordDetail"><statement><![CDATA[SELECT MEETINGRECORD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_MEETINGRECORD WHERE MEETINGRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="MeetingRecordEJBDAO.UpdateMeetingRecord"><statement><![CDATA[UPDATE TB_MEETINGRECORD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE MEETINGRECORD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MeetingRecordEJBDAO.DeleteMeetingRecord"><statement><![CDATA[DELETE FROM TB_MEETINGRECORD WHERE MEETINGRECORD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

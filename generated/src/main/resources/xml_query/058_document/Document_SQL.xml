@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="DocumentEJBDAO.InsertDocument"><statement><![CDATA[INSERT INTO TB_DOCUMENT (DOCUMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentEJBDAO.SelectDocumentList"><statement><![CDATA[SELECT DOCUMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_DOCUMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentEJBDAO.SelectDocumentDetail"><statement><![CDATA[SELECT DOCUMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_DOCUMENT WHERE DOCUMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="DocumentEJBDAO.UpdateDocument"><statement><![CDATA[UPDATE TB_DOCUMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE DOCUMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentEJBDAO.DeleteDocument"><statement><![CDATA[DELETE FROM TB_DOCUMENT WHERE DOCUMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

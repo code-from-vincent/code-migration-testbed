@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CostCenterEJBDAO.InsertCostCenter"><statement><![CDATA[INSERT INTO TB_COSTCENTER (COSTCENTER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CostCenterEJBDAO.SelectCostCenterList"><statement><![CDATA[SELECT COSTCENTER_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_COSTCENTER WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CostCenterEJBDAO.SelectCostCenterDetail"><statement><![CDATA[SELECT COSTCENTER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_COSTCENTER WHERE COSTCENTER_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CostCenterEJBDAO.UpdateCostCenter"><statement><![CDATA[UPDATE TB_COSTCENTER SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE COSTCENTER_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CostCenterEJBDAO.DeleteCostCenter"><statement><![CDATA[DELETE FROM TB_COSTCENTER WHERE COSTCENTER_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

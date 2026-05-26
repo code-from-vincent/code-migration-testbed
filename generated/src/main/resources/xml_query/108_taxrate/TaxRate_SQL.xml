@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="TaxRateEJBDAO.InsertTaxRate"><statement><![CDATA[INSERT INTO TB_TAXRATE (TAXRATE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TaxRateEJBDAO.SelectTaxRateList"><statement><![CDATA[SELECT TAXRATE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_TAXRATE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TaxRateEJBDAO.SelectTaxRateDetail"><statement><![CDATA[SELECT TAXRATE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_TAXRATE WHERE TAXRATE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="TaxRateEJBDAO.UpdateTaxRate"><statement><![CDATA[UPDATE TB_TAXRATE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE TAXRATE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TaxRateEJBDAO.DeleteTaxRate"><statement><![CDATA[DELETE FROM TB_TAXRATE WHERE TAXRATE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

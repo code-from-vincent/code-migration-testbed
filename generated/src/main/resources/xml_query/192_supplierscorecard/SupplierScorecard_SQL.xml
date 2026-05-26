@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="SupplierScorecardEJBDAO.InsertSupplierScorecard"><statement><![CDATA[INSERT INTO TB_SUPPLIERSCORECARD (SUPPLIERSCORECARD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SupplierScorecardEJBDAO.SelectSupplierScorecardList"><statement><![CDATA[SELECT SUPPLIERSCORECARD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SUPPLIERSCORECARD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SupplierScorecardEJBDAO.SelectSupplierScorecardDetail"><statement><![CDATA[SELECT SUPPLIERSCORECARD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SUPPLIERSCORECARD WHERE SUPPLIERSCORECARD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="SupplierScorecardEJBDAO.UpdateSupplierScorecard"><statement><![CDATA[UPDATE TB_SUPPLIERSCORECARD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SUPPLIERSCORECARD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="SupplierScorecardEJBDAO.DeleteSupplierScorecard"><statement><![CDATA[DELETE FROM TB_SUPPLIERSCORECARD WHERE SUPPLIERSCORECARD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

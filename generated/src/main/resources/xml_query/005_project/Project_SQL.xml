@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ProjectEJBDAO.InsertProject"><statement><![CDATA[INSERT INTO TB_PROJECT (PROJECT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProjectEJBDAO.SelectProjectList"><statement><![CDATA[SELECT PROJECT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_PROJECT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProjectEJBDAO.SelectProjectDetail"><statement><![CDATA[SELECT PROJECT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_PROJECT WHERE PROJECT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ProjectEJBDAO.UpdateProject"><statement><![CDATA[UPDATE TB_PROJECT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE PROJECT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ProjectEJBDAO.DeleteProject"><statement><![CDATA[DELETE FROM TB_PROJECT WHERE PROJECT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

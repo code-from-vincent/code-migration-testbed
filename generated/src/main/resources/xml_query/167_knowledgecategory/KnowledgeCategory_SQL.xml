@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="KnowledgeCategoryEJBDAO.InsertKnowledgeCategory"><statement><![CDATA[INSERT INTO TB_KNOWLEDGECATEGORY (KNOWLEDGECATEGORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KnowledgeCategoryEJBDAO.SelectKnowledgeCategoryList"><statement><![CDATA[SELECT KNOWLEDGECATEGORY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_KNOWLEDGECATEGORY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KnowledgeCategoryEJBDAO.SelectKnowledgeCategoryDetail"><statement><![CDATA[SELECT KNOWLEDGECATEGORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_KNOWLEDGECATEGORY WHERE KNOWLEDGECATEGORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="KnowledgeCategoryEJBDAO.UpdateKnowledgeCategory"><statement><![CDATA[UPDATE TB_KNOWLEDGECATEGORY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE KNOWLEDGECATEGORY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="KnowledgeCategoryEJBDAO.DeleteKnowledgeCategory"><statement><![CDATA[DELETE FROM TB_KNOWLEDGECATEGORY WHERE KNOWLEDGECATEGORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

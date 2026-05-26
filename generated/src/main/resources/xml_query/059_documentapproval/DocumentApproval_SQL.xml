@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="DocumentApprovalEJBDAO.InsertDocumentApproval"><statement><![CDATA[INSERT INTO TB_DOCUMENTAPPROVAL (DOCUMENTAPPROVAL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentApprovalEJBDAO.SelectDocumentApprovalList"><statement><![CDATA[SELECT DOCUMENTAPPROVAL_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_DOCUMENTAPPROVAL WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentApprovalEJBDAO.SelectDocumentApprovalDetail"><statement><![CDATA[SELECT DOCUMENTAPPROVAL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_DOCUMENTAPPROVAL WHERE DOCUMENTAPPROVAL_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="DocumentApprovalEJBDAO.UpdateDocumentApproval"><statement><![CDATA[UPDATE TB_DOCUMENTAPPROVAL SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE DOCUMENTAPPROVAL_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DocumentApprovalEJBDAO.DeleteDocumentApproval"><statement><![CDATA[DELETE FROM TB_DOCUMENTAPPROVAL WHERE DOCUMENTAPPROVAL_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

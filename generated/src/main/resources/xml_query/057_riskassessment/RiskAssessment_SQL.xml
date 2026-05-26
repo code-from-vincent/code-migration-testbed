@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="RiskAssessmentEJBDAO.InsertRiskAssessment"><statement><![CDATA[INSERT INTO TB_RISKASSESSMENT (RISKASSESSMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RiskAssessmentEJBDAO.SelectRiskAssessmentList"><statement><![CDATA[SELECT RISKASSESSMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_RISKASSESSMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RiskAssessmentEJBDAO.SelectRiskAssessmentDetail"><statement><![CDATA[SELECT RISKASSESSMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_RISKASSESSMENT WHERE RISKASSESSMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="RiskAssessmentEJBDAO.UpdateRiskAssessment"><statement><![CDATA[UPDATE TB_RISKASSESSMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE RISKASSESSMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RiskAssessmentEJBDAO.DeleteRiskAssessment"><statement><![CDATA[DELETE FROM TB_RISKASSESSMENT WHERE RISKASSESSMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

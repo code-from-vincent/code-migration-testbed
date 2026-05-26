@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="CouponEJBDAO.InsertCoupon"><statement><![CDATA[INSERT INTO TB_COUPON (COUPON_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CouponEJBDAO.SelectCouponList"><statement><![CDATA[SELECT COUPON_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_COUPON WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CouponEJBDAO.SelectCouponDetail"><statement><![CDATA[SELECT COUPON_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_COUPON WHERE COUPON_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="CouponEJBDAO.UpdateCoupon"><statement><![CDATA[UPDATE TB_COUPON SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE COUPON_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="CouponEJBDAO.DeleteCoupon"><statement><![CDATA[DELETE FROM TB_COUPON WHERE COUPON_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ClinicalTrialEJBDAO.InsertClinicalTrial"><statement><![CDATA[INSERT INTO TB_CLINICALTRIAL (CLINICALTRIAL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ClinicalTrialEJBDAO.SelectClinicalTrialList"><statement><![CDATA[SELECT CLINICALTRIAL_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_CLINICALTRIAL WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ClinicalTrialEJBDAO.SelectClinicalTrialDetail"><statement><![CDATA[SELECT CLINICALTRIAL_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_CLINICALTRIAL WHERE CLINICALTRIAL_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ClinicalTrialEJBDAO.UpdateClinicalTrial"><statement><![CDATA[UPDATE TB_CLINICALTRIAL SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE CLINICALTRIAL_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ClinicalTrialEJBDAO.DeleteClinicalTrial"><statement><![CDATA[DELETE FROM TB_CLINICALTRIAL WHERE CLINICALTRIAL_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

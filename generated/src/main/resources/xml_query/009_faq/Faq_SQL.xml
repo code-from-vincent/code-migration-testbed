@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="FaqEJBDAO.InsertFaq"><statement><![CDATA[INSERT INTO TB_FAQ (FAQ_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="FaqEJBDAO.SelectFaqList"><statement><![CDATA[SELECT FAQ_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_FAQ WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="FaqEJBDAO.SelectFaqDetail"><statement><![CDATA[SELECT FAQ_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_FAQ WHERE FAQ_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="FaqEJBDAO.UpdateFaq"><statement><![CDATA[UPDATE TB_FAQ SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE FAQ_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="FaqEJBDAO.DeleteFaq"><statement><![CDATA[DELETE FROM TB_FAQ WHERE FAQ_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

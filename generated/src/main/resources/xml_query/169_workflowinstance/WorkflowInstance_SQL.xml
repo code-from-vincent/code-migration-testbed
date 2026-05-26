@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="WorkflowInstanceEJBDAO.InsertWorkflowInstance"><statement><![CDATA[INSERT INTO TB_WORKFLOWINSTANCE (WORKFLOWINSTANCE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowInstanceEJBDAO.SelectWorkflowInstanceList"><statement><![CDATA[SELECT WORKFLOWINSTANCE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_WORKFLOWINSTANCE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowInstanceEJBDAO.SelectWorkflowInstanceDetail"><statement><![CDATA[SELECT WORKFLOWINSTANCE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_WORKFLOWINSTANCE WHERE WORKFLOWINSTANCE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="WorkflowInstanceEJBDAO.UpdateWorkflowInstance"><statement><![CDATA[UPDATE TB_WORKFLOWINSTANCE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE WORKFLOWINSTANCE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="WorkflowInstanceEJBDAO.DeleteWorkflowInstance"><statement><![CDATA[DELETE FROM TB_WORKFLOWINSTANCE WHERE WORKFLOWINSTANCE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

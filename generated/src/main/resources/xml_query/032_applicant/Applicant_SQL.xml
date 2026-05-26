@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ApplicantEJBDAO.InsertApplicant"><statement><![CDATA[INSERT INTO TB_APPLICANT (APPLICANT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ApplicantEJBDAO.SelectApplicantList"><statement><![CDATA[SELECT APPLICANT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_APPLICANT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ApplicantEJBDAO.SelectApplicantDetail"><statement><![CDATA[SELECT APPLICANT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_APPLICANT WHERE APPLICANT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ApplicantEJBDAO.UpdateApplicant"><statement><![CDATA[UPDATE TB_APPLICANT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE APPLICANT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ApplicantEJBDAO.DeleteApplicant"><statement><![CDATA[DELETE FROM TB_APPLICANT WHERE APPLICANT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="DashboardEJBDAO.InsertDashboard"><statement><![CDATA[INSERT INTO TB_DASHBOARD (DASHBOARD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DashboardEJBDAO.SelectDashboardList"><statement><![CDATA[SELECT DASHBOARD_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_DASHBOARD WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DashboardEJBDAO.SelectDashboardDetail"><statement><![CDATA[SELECT DASHBOARD_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_DASHBOARD WHERE DASHBOARD_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="DashboardEJBDAO.UpdateDashboard"><statement><![CDATA[UPDATE TB_DASHBOARD SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE DASHBOARD_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="DashboardEJBDAO.DeleteDashboard"><statement><![CDATA[DELETE FROM TB_DASHBOARD WHERE DASHBOARD_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

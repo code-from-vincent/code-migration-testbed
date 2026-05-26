@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="BatchExecutionHistoryEJBDAO.InsertBatchExecutionHistory"><statement><![CDATA[INSERT INTO TB_BATCHEXECUTIONHISTORY (BATCHEXECUTIONHISTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BatchExecutionHistoryEJBDAO.SelectBatchExecutionHistoryList"><statement><![CDATA[SELECT BATCHEXECUTIONHISTORY_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_BATCHEXECUTIONHISTORY WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BatchExecutionHistoryEJBDAO.SelectBatchExecutionHistoryDetail"><statement><![CDATA[SELECT BATCHEXECUTIONHISTORY_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_BATCHEXECUTIONHISTORY WHERE BATCHEXECUTIONHISTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="BatchExecutionHistoryEJBDAO.UpdateBatchExecutionHistory"><statement><![CDATA[UPDATE TB_BATCHEXECUTIONHISTORY SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE BATCHEXECUTIONHISTORY_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="BatchExecutionHistoryEJBDAO.DeleteBatchExecutionHistory"><statement><![CDATA[DELETE FROM TB_BATCHEXECUTIONHISTORY WHERE BATCHEXECUTIONHISTORY_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

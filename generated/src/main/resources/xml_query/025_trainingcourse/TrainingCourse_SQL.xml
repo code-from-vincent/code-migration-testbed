@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="TrainingCourseEJBDAO.InsertTrainingCourse"><statement><![CDATA[INSERT INTO TB_TRAININGCOURSE (TRAININGCOURSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrainingCourseEJBDAO.SelectTrainingCourseList"><statement><![CDATA[SELECT TRAININGCOURSE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_TRAININGCOURSE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrainingCourseEJBDAO.SelectTrainingCourseDetail"><statement><![CDATA[SELECT TRAININGCOURSE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_TRAININGCOURSE WHERE TRAININGCOURSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="TrainingCourseEJBDAO.UpdateTrainingCourse"><statement><![CDATA[UPDATE TB_TRAININGCOURSE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE TRAININGCOURSE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrainingCourseEJBDAO.DeleteTrainingCourse"><statement><![CDATA[DELETE FROM TB_TRAININGCOURSE WHERE TRAININGCOURSE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="LegalCaseEJBDAO.InsertLegalCase"><statement><![CDATA[INSERT INTO TB_LEGALCASE (LEGALCASE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LegalCaseEJBDAO.SelectLegalCaseList"><statement><![CDATA[SELECT LEGALCASE_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_LEGALCASE WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LegalCaseEJBDAO.SelectLegalCaseDetail"><statement><![CDATA[SELECT LEGALCASE_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_LEGALCASE WHERE LEGALCASE_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="LegalCaseEJBDAO.UpdateLegalCase"><statement><![CDATA[UPDATE TB_LEGALCASE SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE LEGALCASE_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="LegalCaseEJBDAO.DeleteLegalCase"><statement><![CDATA[DELETE FROM TB_LEGALCASE WHERE LEGALCASE_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

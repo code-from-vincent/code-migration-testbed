@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ShareholderEJBDAO.InsertShareholder"><statement><![CDATA[INSERT INTO TB_SHAREHOLDER (SHAREHOLDER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ShareholderEJBDAO.SelectShareholderList"><statement><![CDATA[SELECT SHAREHOLDER_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_SHAREHOLDER WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ShareholderEJBDAO.SelectShareholderDetail"><statement><![CDATA[SELECT SHAREHOLDER_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_SHAREHOLDER WHERE SHAREHOLDER_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ShareholderEJBDAO.UpdateShareholder"><statement><![CDATA[UPDATE TB_SHAREHOLDER SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE SHAREHOLDER_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ShareholderEJBDAO.DeleteShareholder"><statement><![CDATA[DELETE FROM TB_SHAREHOLDER WHERE SHAREHOLDER_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

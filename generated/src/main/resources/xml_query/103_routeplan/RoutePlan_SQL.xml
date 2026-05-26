@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="RoutePlanEJBDAO.InsertRoutePlan"><statement><![CDATA[INSERT INTO TB_ROUTEPLAN (ROUTEPLAN_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RoutePlanEJBDAO.SelectRoutePlanList"><statement><![CDATA[SELECT ROUTEPLAN_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_ROUTEPLAN WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RoutePlanEJBDAO.SelectRoutePlanDetail"><statement><![CDATA[SELECT ROUTEPLAN_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_ROUTEPLAN WHERE ROUTEPLAN_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="RoutePlanEJBDAO.UpdateRoutePlan"><statement><![CDATA[UPDATE TB_ROUTEPLAN SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE ROUTEPLAN_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="RoutePlanEJBDAO.DeleteRoutePlan"><statement><![CDATA[DELETE FROM TB_ROUTEPLAN WHERE ROUTEPLAN_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

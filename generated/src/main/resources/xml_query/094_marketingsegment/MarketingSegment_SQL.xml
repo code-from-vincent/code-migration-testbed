@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="MarketingSegmentEJBDAO.InsertMarketingSegment"><statement><![CDATA[INSERT INTO TB_MARKETINGSEGMENT (MARKETINGSEGMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MarketingSegmentEJBDAO.SelectMarketingSegmentList"><statement><![CDATA[SELECT MARKETINGSEGMENT_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_MARKETINGSEGMENT WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MarketingSegmentEJBDAO.SelectMarketingSegmentDetail"><statement><![CDATA[SELECT MARKETINGSEGMENT_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_MARKETINGSEGMENT WHERE MARKETINGSEGMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="MarketingSegmentEJBDAO.UpdateMarketingSegment"><statement><![CDATA[UPDATE TB_MARKETINGSEGMENT SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE MARKETINGSEGMENT_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="MarketingSegmentEJBDAO.DeleteMarketingSegment"><statement><![CDATA[DELETE FROM TB_MARKETINGSEGMENT WHERE MARKETINGSEGMENT_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

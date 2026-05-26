@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="ManufacturingStepEJBDAO.InsertManufacturingStep"><statement><![CDATA[INSERT INTO TB_MANUFACTURINGSTEP (MANUFACTURINGSTEP_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ManufacturingStepEJBDAO.SelectManufacturingStepList"><statement><![CDATA[SELECT MANUFACTURINGSTEP_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_MANUFACTURINGSTEP WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ManufacturingStepEJBDAO.SelectManufacturingStepDetail"><statement><![CDATA[SELECT MANUFACTURINGSTEP_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_MANUFACTURINGSTEP WHERE MANUFACTURINGSTEP_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="ManufacturingStepEJBDAO.UpdateManufacturingStep"><statement><![CDATA[UPDATE TB_MANUFACTURINGSTEP SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE MANUFACTURINGSTEP_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="ManufacturingStepEJBDAO.DeleteManufacturingStep"><statement><![CDATA[DELETE FROM TB_MANUFACTURINGSTEP WHERE MANUFACTURINGSTEP_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>

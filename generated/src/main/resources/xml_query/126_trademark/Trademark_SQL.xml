@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<queryservice><queries>
+<query id="TrademarkEJBDAO.InsertTrademark"><statement><![CDATA[INSERT INTO TB_TRADEMARK (TRADEMARK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT) VALUES (?, ?, ?, ?, SYSDATE, ?, SYSDATE)]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrademarkEJBDAO.SelectTrademarkList"><statement><![CDATA[SELECT TRADEMARK_ID, NAME, STATUS_CD, UPDATED_AT FROM TB_TRADEMARK WHERE NAME LIKE '%' || ? || '%' AND STATUS_CD = ? ORDER BY UPDATED_AT DESC]]></statement><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrademarkEJBDAO.SelectTrademarkDetail"><statement><![CDATA[SELECT TRADEMARK_ID, NAME, STATUS_CD, CREATED_BY, CREATED_AT, UPDATED_BY, UPDATED_AT FROM TB_TRADEMARK WHERE TRADEMARK_ID = ?]]></statement><param type="VARCHAR"/></query>
+<query id="TrademarkEJBDAO.UpdateTrademark"><statement><![CDATA[UPDATE TB_TRADEMARK SET NAME = ?, STATUS_CD = ?, UPDATED_BY = ?, UPDATED_AT = SYSDATE WHERE TRADEMARK_ID = ?]]></statement><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/><param type="VARCHAR"/></query>
+<query id="TrademarkEJBDAO.DeleteTrademark"><statement><![CDATA[DELETE FROM TB_TRADEMARK WHERE TRADEMARK_ID = ?]]></statement><param type="VARCHAR"/></query>
+</queries></queryservice>
