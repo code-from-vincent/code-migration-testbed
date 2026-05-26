@@ -1,0 +1,19 @@
+package com.switchover.legacy.web.action.hr;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import kr.some.cmm.web.DefaultAction;
+
+public class TrainingBudgetAction extends DefaultAction {
+    public ActionForward insertTrainingBudget(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+    public ActionForward selectTrainingBudgetList(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { HashMap hm=(HashMap)invokeLocal(req); Collection list=(Collection)hm.get("trainingbudgetList"); req.setAttribute("trainingbudgetList", list==null?new ArrayList():list); return null; }
+    public ActionForward selectTrainingBudgetDetail(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { HashMap hm=(HashMap)invokeLocal(req); req.setAttribute("trainingbudgetDetail", hm.get("trainingbudgetDetail")); return null; }
+    public ActionForward updateTrainingBudget(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+    public ActionForward deleteTrainingBudget(ActionMapping m, ActionForm f, HttpServletRequest req, HttpServletResponse res) throws Exception { req.setAttribute("result", (HashMap)invokeLocal(req)); return null; }
+}
