@@ -16,7 +16,7 @@ Each of the 200 domains follows the exact same structure:
 |----------------|------------------------------------|------------------------------------|---------------------------------------------------------|
 | Web (Action)   | `com.switchover.legacy.web.action` | `kr.some.cmm.web.DefaultAction`    | Struts Action – delegates to EJB via `invokeLocal(req)` |
 | Business (EJB) | `com.switchover.legacy.ejb`        | `kr.some.cmm.frame.DefaultSession` | EJB Session Bean interface                              |
-| Data Access    | `src/main/resources/xml_query/`    | Custom NTIS XML format             | Raw SQL queries referenced by EJB DAO                   |
+| Data Access    | `src/main/resources/xml_query/`    | Custom SOME XML format             | Raw SQL queries referenced by EJB DAO                   |
 
 **Data flow:** HTTP Request → `*Action.invokeLocal(req)` → EJB → `*EJBDAO` → XML query → Oracle DB
 
